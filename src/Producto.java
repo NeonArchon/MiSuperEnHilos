@@ -1,22 +1,22 @@
 public class Producto {
 
     //atributos
-    private int Nombre;
+    private String Nombre;
     private double precio;
 
     //Constructor
-    public Producto(int nombre, double precio) {
+    public Producto(String nombre, double precio) {
         Nombre = nombre;
         this.precio = precio;
     }
 
     //Getters y Setters (Setters no van a ser utilizados de momento
 
-    public int getNombre() {
+    public String getNombre() {
         return Nombre;
     }
 
-    public void setNombre(int nombre) {
+    public void setNombre(String nombre) {
         Nombre = nombre;
     }
 
