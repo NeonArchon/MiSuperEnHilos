@@ -17,8 +17,9 @@ public class Main {
 
         // Crear un semáforo con 2 permisos (una para cada caja)
         Semaphore semaphore = new Semaphore(2);
-        long initialTime = System.currentTimeMillis();
+        long initialTime = System.currentTimeMillis(); // Esto permite contar el tiempo en milisegundos
 
+        //funcion de los hilos
         for (Cliente cliente : clientes) {
             new Thread(() -> {
                 try {
@@ -27,9 +28,9 @@ public class Main {
 
                     // Determinar qué caja está libre
                     synchronized (System.out) {
-                        if (semaphore.availablePermits() == 1) {
+                        if (semaphore.availablePermits() == 1) { //si caja 1 esta libre, procesa a un cliente
                             caja1.procesarCliente(cliente, initialTime);
-                        } else {
+                        } else { //si caja1 esta llena, la caja 2 precesa un cliente
                             caja2.procesarCliente(cliente, initialTime);
                         }
                     }
@@ -37,7 +38,7 @@ public class Main {
                     e.printStackTrace();
                 } finally {
                     // Liberar el permiso
-                    semaphore.release();
+                    semaphore.release(); // esto permite que las cajas estes disponibkes cuando terminen procesos
                 }
             }).start();
         }

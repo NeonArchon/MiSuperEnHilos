@@ -4,7 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="40b105ef-ffef-4eff-bd32-b69110534cfd" name="Changes" comment="" />
+    <list default="true" id="40b105ef-ffef-4eff-bd32-b69110534cfd" name="Changes" comment="Cambios en el codigo en general (se me paso hacer otros commits por que queria que el programa funcionara correctamente)">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Caja.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Caja.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Cliente.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Cliente.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/Main.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/Main.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -20,6 +25,18 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
+  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
+  "lastFilter": {
+    "state": "OPEN",
+    "assignee": "NeonArchon"
+  }
+}]]></component>
+  <component name="GithubPullRequestsUISettings"><![CDATA[{
+  "selectedUrlAndAccountId": {
+    "url": "https://github.com/NeonArchon/MiSuperEnHilos.git",
+    "accountId": "f5d83842-6e40-46d7-bfc2-c9ef3ba0b7f8"
+  }
+}]]></component>
   <component name="ProjectColorInfo">{
   &quot;associatedIndex&quot;: 5
 }</component>
@@ -34,6 +51,7 @@
     "Application.Main.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
     "kotlin-language-version-configured": "true"
   }
 }]]></component>
@@ -46,6 +64,19 @@
       <option name="presentableId" value="Default" />
       <updated>1731425196218</updated>
     </task>
+    <task id="LOCAL-00001" summary="Cambios en el codigo en general (se me paso hacer otros commits por que queria que el programa funcionara correctamente)">
+      <option name="closed" value="true" />
+      <created>1732444301477</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1732444301477</updated>
+    </task>
+    <option name="localTasksCounter" value="2" />
     <servers />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Cambios en el codigo en general (se me paso hacer otros commits por que queria que el programa funcionara correctamente)" />
+    <option name="LAST_COMMIT_MESSAGE" value="Cambios en el codigo en general (se me paso hacer otros commits por que queria que el programa funcionara correctamente)" />
   </component>
 </project>
