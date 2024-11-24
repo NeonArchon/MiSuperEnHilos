@@ -1,27 +1,45 @@
 import java.util.ArrayList;
-import java.util.List;
+import java.util.concurrent.Semaphore;
 
 public class Main {
     public static void main(String[] args) {
+        // Crear las cajas
+        Caja caja1 = new Caja("Caja 1");
+        Caja caja2 = new Caja("Caja 2");
 
+        // Generar clientes con carritos aleatorios
+        ArrayList<Cliente> clientes = new ArrayList<>();
+        clientes.add(new Cliente("Cliente 1", GeneradorCarritos.generarCarrito()));
+        clientes.add(new Cliente("Cliente 2", GeneradorCarritos.generarCarrito()));
+        clientes.add(new Cliente("Cliente 3", GeneradorCarritos.generarCarrito()));
+        clientes.add(new Cliente("Cliente 4", GeneradorCarritos.generarCarrito()));
+        clientes.add(new Cliente("Cliente 5", GeneradorCarritos.generarCarrito()));
 
+        // Crear un semáforo con 2 permisos (una para cada caja)
+        Semaphore semaphore = new Semaphore(2);
+        long initialTime = System.currentTimeMillis();
 
-        List<Producto> Lista1 = new ArrayList<>();
-        Lista1.add(new Producto("Pan",1.0));
-        Lista1.add(new Producto("Arroz",1.50));
-        Lista1.add(new Producto("Leche",0.95));
-        Lista1.add(new Producto("Pan",1.0));
-        Lista1.add(new Producto("Picas",1.10));
+        for (Cliente cliente : clientes) {
+            new Thread(() -> {
+                try {
+                    // Adquirir un permiso del semáforo
+                    semaphore.acquire();
 
-        Cliente cliente1 = new Cliente("Pedro", Lista1);
-
-        List<Producto> Lista2 = new ArrayList<>();
-        Lista2.add(new Producto("Coca-Cola",1.90));
-        Lista2.add(new Producto("Pizza de Atun y Bacon",3.50));
-        Lista2.add(new Producto("Hielo",0.95));
-        Lista2.add(new Producto("Helado Vainilla",2.35));
-        Lista2.add(new Producto("Pan",1.0));
-
-        Cliente cliente2 = new Cliente("Alberro", Lista1);
+                    // Determinar qué caja está libre
+                    synchronized (System.out) {
+                        if (semaphore.availablePermits() == 1) {
+                            caja1.procesarCliente(cliente, initialTime);
+                        } else {
+                            caja2.procesarCliente(cliente, initialTime);
+                        }
+                    }
+                } catch (InterruptedException e) {
+                    e.printStackTrace();
+                } finally {
+                    // Liberar el permiso
+                    semaphore.release();
+                }
+            }).start();
+        }
     }
 }
